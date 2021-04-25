@@ -3,6 +3,9 @@ class Translation(object):
     START_TEXT = """
 Hello {} , I'am a simple youtube video link to telegram file or media uploader bot with permanent thumbnail support.
 
+Made by @FayasNoushad
+"""
+    HELP_TEXT = """
 <b><u>Link to Media or File</u></b>
 ➠ Send a youtube video link for upload to telegram file or media.
 
@@ -17,6 +20,40 @@ Hello {} , I'am a simple youtube video link to telegram file or media uploader b
 
 Made by @FayasNoushad
 """
+    ABOUT_TEXT = """
+- **Bot :** `YouTube Downloader`
+- **Creator :** [Fayas](https://telegram.me/TheFayas)
+- **Channel :** [Fayas Noushad](https://telegram.me/FayasNoushad)
+- **Credits :** `Everyone in this journey`
+- **Source :** [Click here](https://github.com/FayasNoushad/YouTube-Downloader)
+- **Language :** [Python3](https://python.org)
+- **Library :** [Pyrogram v1.2.0](https://pyrogram.org)
+- **Server :** [Heroku](https://heroku.com)
+"""
+    START_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('Channel', url='https://telegram.me/FayasNoushad'),
+        InlineKeyboardButton('Feedback', url='https://telegram.me/TheFayas')
+        ],[
+        InlineKeyboardButton('Help', callback_data='help'),
+        InlineKeyboardButton('About', callback_data='about'),
+        InlineKeyboardButton('Close', callback_data='close')
+        ]]
+    )
+    HELP_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('Home', callback_data='home'),
+        InlineKeyboardButton('About', callback_data='about'),
+        InlineKeyboardButton('Close', callback_data='close')
+        ]]
+    )
+    ABOUT_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('Home', callback_data='home'),
+        InlineKeyboardButton('Help', callback_data='help'),
+        InlineKeyboardButton('Close', callback_data='close')
+        ]]
+    )
     BLOCK_LIST_TEXT = "This url is blocked so I can not upload this URL.\n\nUse @FnURLUploadBot"
     FORMAT_SELECTION = """<b>Select the desired format:</b> <a href='{}'>file size might be approximate</a>
     
