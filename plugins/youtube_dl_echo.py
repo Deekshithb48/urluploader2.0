@@ -36,9 +36,9 @@ from PIL import Image
 
 @Client.on_message(filters.private & filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
-    #if "youtu" not in update.text:
-        #await bot.edit_message_text(chat_id=update.chat.id, text=Translation.BLOCK_LIST_TEXT, disable_web_page_preview=True, parse_mode="html", message_id=fmsg.message_id)
-        #return
+    if "youtu" not in update.text:
+        await bot.edit_message_text(chat_id=update.chat.id, text=Translation.BLOCK_LIST_TEXT, disable_web_page_preview=True, parse_mode="html", message_id=fmsg.message_id)
+        return
     logger.info(update.from_user.id)
     fmsg = await update.reply_text(text=Translation.CHECKING_LINK, quote=True)
     url = update.text
