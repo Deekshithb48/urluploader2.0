@@ -288,14 +288,20 @@ async def echo(bot, update):
                 thumb_image_path = DownLoadFile(
                     thumbnail_image,
                     Config.DOWNLOAD_LOCATION + "/" +
-                    str(update.from_user.id) + ".jpg",
+                    str(update.from_user.id) + ".webp",
                     Config.CHUNK_SIZE,
                     None,  # bot,
                     Translation.DOWNLOAD_START,
                     update.message_id,
                     update.chat.id
                 )
-        await fmsg.delete()
+        logger.info(f"Thumbnail22:{thumb_image_path}")
+        if os.path.exists(thumb_image_path):
+            im = Image.open(thumb_image_path).convert("RGB")
+            im.save(thumb_image_path.replace(".webp", ".jpg"), "jpeg")
+            logger.info(f"Thumbnail New JPG:{thumb_image_path}")
+        else:
+            thumb_image_path = None
         await bot.send_message(
             chat_id=update.chat.id,
             text=Translation.FORMAT_SELECTION.format(thumbnail) + "\n\n" + Translation.SET_CUSTOM_USERNAME_PASSWORD,
