@@ -121,7 +121,9 @@ async def echo(bot, update):
             "--no-warnings",
             "--youtube-skip-dash-manifest",
             "-j",
-            url
+            url,
+            "--geo-bypass-country",
+            "IN"
         ]
     if "hotstar" in url:
         command_to_exec.append("--geo-bypass-country")
