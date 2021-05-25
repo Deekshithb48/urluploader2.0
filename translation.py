@@ -5,7 +5,7 @@ class Translation(object):
     START_TEXT = """
 Hello {} , I'am a simple youtube video link to telegram file or media uploader bot with permanent thumbnail support.
 
-Made by @FayasNoushad
+Made by @JAsuran123
 """
     HELP_TEXT = """
 <b><u>Link to Media or File</u></b>
@@ -20,12 +20,12 @@ Made by @FayasNoushad
 <b><u>Show Thumbnail</u></b>
 ➠ Send /showthumb to view custom thumbnail.
 
-Made by @FayasNoushad
+Made by @JAsuran123
 """
     ABOUT_TEXT = """
 - **Bot :** `YouTube Downloader`
-- **Creator :** [Fayas](https://telegram.me/TheFayas)
-- **Channel :** [Fayas Noushad](https://telegram.me/FayasNoushad)
+- **Creator :** [JAsuran](https://telegram.me/JAsuran123)
+- **Channel :** [SerialCoIn](https://telegram.me/SerialCoIn)
 - **Credits :** `Everyone in this journey`
 - **Source :** [Click here](https://github.com/FayasNoushad/YouTube-Downloader)
 - **Language :** [Python3](https://python.org)
@@ -34,8 +34,8 @@ Made by @FayasNoushad
 """
     START_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('Channel', url='https://telegram.me/FayasNoushad'),
-        InlineKeyboardButton('Feedback', url='https://telegram.me/TheFayas')
+        InlineKeyboardButton('Channel', url='https://telegram.me/Serialcoin'),
+        InlineKeyboardButton('Feedback', url='https://telegram.me/JAsuran123')
         ],[
         InlineKeyboardButton('Help', callback_data='help'),
         InlineKeyboardButton('About', callback_data='about'),
