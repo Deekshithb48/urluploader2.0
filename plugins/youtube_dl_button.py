@@ -76,7 +76,8 @@ async def youtube_dl_call_back(bot, update):
             youtube_dl_username = youtube_dl_username.strip()
         if youtube_dl_password is not None:
             youtube_dl_password = youtube_dl_password.strip()
-
+        logger.info(youtube_dl_url)
+        logger.info(custom_file_name)
     else:
         for entity in update.message.reply_to_message.entities:
             if entity.type == "text_link":
@@ -136,7 +137,7 @@ async def youtube_dl_call_back(bot, update):
     if "hotstar" in youtube_dl_url:
         command_to_exec.append("--geo-bypass-country")
         command_to_exec.append("IN")
-
+    logger.info(command_to_exec)
     start = datetime.now()
     process = await asyncio.create_subprocess_exec(
         *command_to_exec,
@@ -317,7 +318,7 @@ async def youtube_dl_call_back(bot, update):
                     i = 0
                     caption = ""
                     if is_w_f:
-                        caption = ""
+                        caption = "@SerialCoIn"
                     for image in images:
                         if os.path.exists(image):
                             if i == 0:
