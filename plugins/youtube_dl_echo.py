@@ -36,9 +36,6 @@ from PIL import Image
 
 @Client.on_message(filters.private & filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
-    if "youtu" not in update.text:
-        await bot.edit_message_text(chat_id=update.chat.id, text=Translation.BLOCK_LIST_TEXT, disable_web_page_preview=True, parse_mode="html", message_id=fmsg.message_id)
-        return
     logger.info(update.from_user.id)
     fmsg = await update.reply_text(text=Translation.CHECKING_LINK, quote=True)
     url = update.text
@@ -285,6 +282,7 @@ async def echo(bot, update):
                     if response_json["thumbnail"] is not None:
                         thumbnail = response_json["thumbnail"]
                         thumbnail_image = response_json["thumbnail"]
+                        logger.info(f"Thumbnail :{thumbnail_image}")
                 thumb_image_path = DownLoadFile(
                     thumbnail_image,
                     Config.DOWNLOAD_LOCATION + "/" +
